@@ -1,0 +1,9 @@
+The output will be:
+
+No, I wug.
+You wugga wug.
+I wug.
+
+There are no variables and the methods don't have any parameters so I don't think a stack diagram can be drawn.
+
+You will get a runtime error if you invoke baffle() at the end of the ping method.
