@@ -19,12 +19,14 @@ public class Sieve{
   }
 
   public static void main(String[]args){
-  //create array representing all positive integers up to the given number n
-  boolean[] isPrime = new boolean [20];
-  isPrime = sieve(20);
-  System.out.println(Arrays.toString(isPrime));
-  System.out.println("Debug OK");
+    //create array representing all positive integers up to the given number n
+    int n = 100;
+    boolean[] isPrime = new boolean [n];
+    //call method sieve and print results
+    isPrime = sieve(n);
+    for(int i = 2; i < isPrime.length; i++){
+      System.out.println(i + " " + isPrime[i]);
+    }
   }
-
 
 }
