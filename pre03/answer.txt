@@ -4,6 +4,18 @@ No, I wug.
 You wugga wug.
 I wug.
 
-There are no variables and the methods don't have any parameters so I don't think a stack diagram can be drawn.
+There are no variables and the methods don't have any parameters so I don't think a stack diagram can be drawn. Here is my best guess at what is being requested:
 
-You will get a runtime error if you invoke baffle() at the end of the ping method.
+  Main
+    Zoop
+      Baffle
+        Ping *** 1st time Ping is invoked
+      Baffle
+        Ping
+    Baffle
+      Ping
+
+*** The 1st time Ping is invoked, the program started running the Main method, called the Zoop method from Main, called the Baffle method from Zoop, and called the Ping method from Baffle. The output of the program at this point is:
+No, I wug (the call to Ping adds a period after wug.)
+
+You will get a runtime error if you invoke baffle() at the end of the ping method. I think it is called a Stack Overflow error.
