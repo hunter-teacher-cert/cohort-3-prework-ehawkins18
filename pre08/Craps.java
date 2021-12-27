@@ -19,6 +19,17 @@ public class Craps{
     }
   return rollTotal;
   }
+//Method point for when shooter rolls a 5, 6, 6, 8, 9, or 10
+  public static boolean point(int pointVal){
+    boolean pointWins;
+    System.out.println("point is "+pointVal);
+    int pointRoll = shoot(2,6);
+    System.out.println(" point roll "+pointRoll);
+    if(pointRoll == pointVal){pointWins = true;}
+      else{if(pointRoll == 7){pointWins = false;}
+        else {pointWins = point(pointVal);}}
+    return pointWins;
+  }
 //Method round for determining if the shooter wins or loses
   public static boolean round(){
     //returns true if the shooter wins the round and returns false if the shooter loses the round
@@ -26,7 +37,7 @@ public class Craps{
     int shooterRoll = shoot(2,6);
     System.out.println(shooterRoll);
     if(shooterRoll == 2 || shooterRoll == 3 || shooterRoll == 12) {return false;}
-    if(shooterRoll == 7 || shooterRoll == 11) {return true;} else {shooterWins = round();}
+    if(shooterRoll == 7 || shooterRoll == 11) {return true;} else {shooterWins = point(shooterRoll);}
     
     return shooterWins;
   }
